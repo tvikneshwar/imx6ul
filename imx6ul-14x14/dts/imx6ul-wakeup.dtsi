@@ -1,0 +1,41 @@
+/*  vikneshwar wakeup pin */
+
+/ {
+
+
+
+
+gpio-keys {
+                compatible = "gpio-keys";
+                pinctrl-names = "default";
+                pinctrl-0 = <&pinctrl_gpio_keys>;
+
+                power {
+                        label = "Wakeup Button";
+                        gpios = <&gpio3 6 GPIO_ACTIVE_HIGH>;
+                        linux,code = <KEY_WAKEUP>;
+                        gpio-key,wakeup;
+                  };
+                };
+
+
+pinctrl_gpio_keys: gpio_keysgrp {
+                fsl,pins = <
+                           MX6UL_PAD_LCD_DATA01__GPIO3_IO06  0x1b0b0
+                >;
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+};
+
+

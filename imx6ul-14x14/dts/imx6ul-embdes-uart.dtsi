@@ -1,0 +1,96 @@
+/* Vikneshwar Embdes UART DTS */
+#include <dt-bindings/input/input.h>
+#include "imx6ul.dtsi"
+
+
+
+/ {
+
+ 
+
+ 	model = "Freescale i.MX6 UltraLite 14x14 EVK Board";
+        compatible = "fsl,imx6ul-14x14-evk", "fsl,imx6ul";
+/*
+
+uart2 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&pinctrl_uart2>;
+        fsl,uart-has-rtscts;
+        status = "disabled";
+ };
+
+*/
+
+
+uart3 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&pinctrl_uart3>;
+        fsl,uart-has-rtscts;
+        status = "okay";
+ };
+
+uart4 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&pinctrl_uart4>;
+        fsl,uart-has-rtscts;
+        status = "disabled";
+ };
+
+
+uart5 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&pinctrl_uart5>;
+        fsl,uart-has-rtscts;
+        status = "disabled";
+ };
+
+  /*
+                 pinctrl_uart2: uart2dtegrp {
+                        fsl,pins = <
+                                MX6UL_PAD_UART2_TX_DATA__UART2_DTE_RX   0x1b0b1   /* ttymxc1 */
+/*  
+                              MX6UL_PAD_UART2_RX_DATA__UART2_DTE_TX   0x1b0b1
+                        >;
+                };
+*/
+                pinctrl_uart3: uart3dtegrp {
+                        fsl,pins = <
+                                MX6UL_PAD_UART3_TX_DATA__UART3_DCE_TX   0x1b0b1   /* ttymxc2 */
+                                MX6UL_PAD_UART3_TX_DATA__UART3_DTE_RX   0x1b0b1
+                        >;
+                };
+
+
+                pinctrl_uart4: uart4dtegrp {
+                        fsl,pins = <
+                                MX6UL_PAD_UART4_TX_DATA__UART4_DCE_TX   0x1b0b1   /* ttymxc3 */
+                                MX6UL_PAD_UART4_TX_DATA__UART4_DTE_RX   0x1b0b1
+                        >;
+                };
+
+
+                pinctrl_uart5: uart5dtegrp {
+                        fsl,pins = <
+                                MX6UL_PAD_UART5_RX_DATA__UART5_DCE_RX   0x1b0b1   /* ttymxc4 */
+                                MX6UL_PAD_UART5_RX_DATA__UART5_DTE_TX   0x1b0b1
+                        >;
+                };
+
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

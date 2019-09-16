@@ -1,0 +1,27 @@
+/*Vikneshwar custom dtsi for gpio */
+
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
+#include "imx6ul-pinfunc.h"
+
+
+/{
+
+external_gpio { 
+ 	pinctrl-name = "default"; 
+	pinctrl-0 = <&pinctrl_gpio1>; 
+	status = "okay"; 
+	};
+
+pinctrl_gpio1: gpio1 { 
+	fsl,pins = < MX6UL_PAD_LCD_DATA03__GPIO3_IO08 0xb0 
+	>;
+ };
+
+};
+
+
+
+
+

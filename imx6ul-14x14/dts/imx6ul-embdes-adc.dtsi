@@ -1,0 +1,55 @@
+/*viknehwar embdes dtsi*/
+
+/{
+
+ adc1 {
+    pinctrl-names = "default";
+    pinctrl-0 = <&pinctrl_adc1>;
+    vref-supply = <&reg_vref_3v3>;
+    /* adc-ch-list = <4>; */
+    status = "okay";
+};
+ 
+ 	reg_vref_3v3: regulator-vref {
+    		compatible = "regulator-fixed";
+    		regulator-name = "vref-3v3";
+    		regulator-min-microvolt = <3300000>;
+   		regulator-max-microvolt = <3300000>;
+
+};
+
+        pinctrl_adc1: adc1grp {
+            fsl,pins = <
+                MX6UL_PAD_GPIO1_IO07__GPIO1_IO07        0xb0
+                MX6UL_PAD_GPIO1_IO08__GPIO1_IO08        0xb0
+            >;
+        };
+    
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
