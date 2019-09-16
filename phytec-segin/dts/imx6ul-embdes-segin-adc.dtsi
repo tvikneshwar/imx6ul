@@ -1,0 +1,44 @@
+/*embdes-adc-pins*/
+
+/ {
+
+
+reg_adc1_vref_3v3: regulator-adc1 {
+                compatible = "regulator-fixed";
+                regulator-name = "vref-3v3";
+                regulator-min-microvolt = <3300000>;
+                regulator-max-microvolt = <3300000>;
+        };
+
+
+adc1 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&pinctrl_adc1>;
+        vref-supply = <&reg_adc1_vref_3v3>;
+        status = "disabled";
+        /*
+         * driver can not separate a specific channel so we request 4 channels
+         * here - we need only the fourth channel
+         */
+        /* num-channels = <4>; */
+};
+
+
+        pinctrl_adc1: adc1grp {
+                fsl,pins = <
+                        MX6UL_PAD_GPIO1_IO03__GPIO1_IO03     0xb0
+                        MX6UL_PAD_GPIO1_IO04__GPIO1_IO04     0xb0
+                        /*
+			MX6UL_PAD_GPIO1_IO08__GPIO1_IO08     0xb0
+                        MX6UL_PAD_GPIO1_IO09__GPIO1_IO09     0xb0
+                                                                   */
+
+                  /*    MX6UL_PAD_GPIO1_IO05__GPIO1_IO05     0xb0*/
+                  /*    MX6UL_PAD_GPIO1_IO07__GPIO1_IO07     0xb0 */
+                  /*    MX6UL_PAD_GPIO1_IO08__GPIO1_IO08     0xb0 */
+                       
+                >;
+        };
+
+
+};
